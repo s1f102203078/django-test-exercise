@@ -30,3 +30,25 @@ class TaskModelTestCase(TestCase):
         self.assertEqual(task.title, 'task2')
         self.assertFalse(task.completed)
         self.assertEqual(task.due_at, None)
+
+    def test_is_overdue_future(self):
+        due = timezone.make_aware(datetime(2024, 6, 30, 23, 59, 59))
+        current = timezone.make_aware(datetime(2024, 6, 30, 0, 0, 0))
+        task = Task(title='task1', due_at=due)
+        task.save()
+        self.assertFalse(task.is_overdue(current))
+
+    def test_is_overdue_past(self):
+        # 締切が過去の場合のテスト
+        due = timezone.make_aware(datetime(2024, 6, 30, 23, 59, 59))
+        current = timezone.make_aware(datetime(2024, 7, 1, 0, 0, 0)) # 締切より後の日時
+        task = Task(title='task_past', due_at=due)
+        task.save()
+        self.assertTrue(task.is_overdue(current)) # 期限切れなのでTrueが返ることを期待
+
+    def test_is_overdue_none(self):
+        # 締切がない場合のテスト
+        current = timezone.make_aware(datetime(2024, 7, 1, 0, 0, 0)) # 任意の日時
+        task = Task(title='task_none', due_at=None) # due_atをNoneにする
+        task.save()
+        self.assertFalse(task.is_overdue(current)) # 締切がないのでFalseが返ることを期待
