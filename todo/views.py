@@ -5,7 +5,7 @@ from todo.models import Task
 from django.http import Http404
 from django.shortcuts import redirect, get_object_or_404
 from django.views.decorators.http import require_POST
-# Create your views here.
+
 def index(request):
     if request.method == 'POST':
         task = Task(title=request.POST['title'],
