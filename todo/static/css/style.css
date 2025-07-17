@@ -1,0 +1,126 @@
+/* スクロールトップボタンのスタイル */
+.scroll-to-top-btn {
+    /* display: none; */ /* この行を削除またはコメントアウト */
+    position: fixed; /* 画面に固定 */
+    bottom: 20px; /* 下からの距離 */
+    right: 20px; /* 右からの距離 */
+    width: 50px; /* ボタンの幅 */
+    height: 50px; /* ボタンの高さ */
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景色 (黒 50% 透明) */
+    color: white; /* 矢印の色 */
+    border: none; /* ボーダーなし */
+    border-radius: 50%; /* 角丸で円形にする */
+    font-size: 24px; /* 矢印のサイズ */
+    display: flex; /* 矢印を中央に配置するためにflexboxを使用 */
+    justify-content: center; /* 水平方向中央揃え */
+    align-items: center; /* 垂直方向中央揃え */
+    cursor: pointer; /* マウスカーソルをポインターに */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 軽い影 */
+    transition: background-color 0.3s; /* ホバー時のアニメーション (opacityは不要に) */
+    z-index: 1000; /* 他の要素の上に表示 */
+    /* opacity: 0; */ /* この行を削除またはコメントアウト */
+    /* pointer-events: none; */ /* この行を削除またはコメントアウト */
+    opacity: 1; /* 最初から不透明にする */
+    pointer-events: auto; /* 最初からクリックイベントを有効化する */
+}
+
+/* ボタンが表示されたときのスタイル (JavaScriptで追加/削除) */
+/* このクラスは、スクロール量によって表示/非表示を切り替える場合にのみ必要です。
+   最初から表示する場合は不要になりますが、念のため残しておきます。
+   JavaScriptでこのクラスの追加/削除ロジックを削除することも検討してください。 */
+.scroll-to-top-btn.show {
+    opacity: 1; /* 不透明にする */
+    pointer-events: auto; /* クリックイベントを有効化 */
+}
+
+/* ホバー時のスタイル */
+.scroll-to-top-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* ホバーで少し濃くする */
+}
+
+
+/* 全体の背景とフォント */
+body {
+    background-color: #eef4fa; /* 明るい青みがかったグレー */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+    margin: 40px;
+}
+
+/* タイトル */
+h1 {
+    color: #1e3a8a; /* 落ち着いた濃いネイビーブルー */
+    border-bottom: 2px solid #bcd1ea;
+    padding-bottom: 10px;
+}
+
+/* フォーム全体 */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #d0e0f0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ラベルと入力 */
+label {
+    font-weight: bold;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #c4d7e5;
+    border-radius: 4px;
+    background-color: #f7fbff;
+}
+
+/* ボタン */
+button {
+    background-color: #2563eb; /* 明るめの青 */
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #1d4ed8; /* ホバーで濃い青に */
+}
+
+/* ソートリンク */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* タスク表示部分 */
+.text {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #d0e0f0;
+    border-radius: 8px;
+    margin-top: 20px;
+    max-width: 600px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.text h2 {
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
