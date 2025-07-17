@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils.timezone import make_aware
 from django.utils.dateparse import parse_datetime
 from todo.models import Task
@@ -37,10 +37,12 @@ def detail(request, task_id):
 
 
 
+
 def delete(request, task_id):
     task = get_object_or_404(Task, pk=task_id)
     task.delete()
     return redirect('index')
+
 
 
 def close(request, task_id):
@@ -51,7 +53,6 @@ def close(request, task_id):
     task.completed = True
     task.save()
     return redirect(index)
-
 
 def update(request, task_id):
     try:
