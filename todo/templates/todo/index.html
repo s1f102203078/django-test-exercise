@@ -7,7 +7,6 @@
     <meta name="author" content="INIAD">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
 </head>
 
 <body>
@@ -42,11 +41,24 @@
             {% if task.due_at %}
             <li>期日: {{ task.due_at }}</li>
             {% endif %}
-            {% if task.completed %}
-            <li>課題の進捗状況: 完了済み</li>
-            {% else %}
-            <li>課題の進捗状況: 未完了</li>
-            {% endif %}
+            <li>課題の進捗状況: 
+                {% if task.completed %}
+                    完了済み
+                {% else %}
+                    未完了
+                {% endif %}
+        <li>
+            <a href="{% url 'toggle_complete' task.id %}" class="toggle-button">
+                {% if task.completed %}
+                    未完了に戻す
+                {% else %}
+                    完了
+                {% endif %}
+            </a>
+            {# 既存の操作ボタンと並べる場合、以下のように追加できます。必要なければ削除してください。 #}
+            <a href="{% url 'update' task.id %}" class="action-button update-button">更新</a>
+            <a href="{% url 'delete' task.id %}" class="action-button delete-button">削除</a>
+        </li>
         </ul>
     </div>
     {% endfor %}

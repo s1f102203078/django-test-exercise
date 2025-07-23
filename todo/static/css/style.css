@@ -124,3 +124,50 @@ a:hover {
     margin-bottom: 10px;
     color: #1e3a8a;
 }
+
+.toggle-button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    background-color: #28a745; /* 完了ボタンのデフォルト色 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+    background-color: #218838;
+}
+
+/* 既存の操作ボタンにもスタイルを統一する場合 */
+.action-button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white; /* デフォルトで白文字に */
+}
+
+.update-button {
+    background-color: #007bff; /* 更新ボタンの色 */
+}
+.update-button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    background-color: #dc3545; /* 削除ボタンの色 */
+}
+.delete-button:hover {
+    background-color: #c82333;
+}
+
