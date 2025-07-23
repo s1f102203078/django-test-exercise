@@ -69,3 +69,9 @@ def update(request, task_id):
         'task': task
     }
     return render(request, 'todo/edit.html', context)
+
+def toggle_complete(request, task_id):
+    task = get_object_or_404(Task, pk=task_id)
+    task.completed = not task.completed # completed の値を反転させる
+    task.save()
+    return redirect('index') # 一覧ページに戻る
