@@ -24,6 +24,19 @@
         <div>
             <button type="submit">提出する</button>
         </div>
+        <div class="label-container">
+            <span class="task-label color-category-red">重要</span>
+            <span class="task-label color-category-blue">緊急</span>
+            <span class="task-label color-category-green">通常</span>
+        </div>
+
+        <div class="color-picker">
+            <button data-color="red" class="color-option" style="background-color: red;"></button>
+            <button data-color="blue" class="color-option" style="background-color: blue;"></button>
+            <button data-color="green" class="color-option" style="background-color: green;"></button>
+        </div>
+
+        <p>選択された色: <span id="selectedColorDisplay">なし</span></p>
     </form>
     <br>
 

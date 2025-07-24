@@ -1,0 +1,37 @@
+.task-label {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  margin-right: 5px;
+  font-size: 0.9em;
+}
+
+.color-category-red {
+  background-color: #e74c3c;
+}
+
+.color-category-blue {
+  background-color: #3498db;
+}
+
+.color-category-green {
+  background-color: #2ecc71;
+}
+
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  margin: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.color-option.selected {
+  border-color: #333;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.2);
+}
