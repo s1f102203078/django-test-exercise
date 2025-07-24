@@ -38,6 +38,93 @@
     background-color: rgba(0, 0, 0, 0.7); /* ホバーで少し濃くする */
 }
 
+
+/* 全体の背景とフォント */
+body {
+    background-color: #eef4fa; /* 明るい青みがかったグレー */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+    margin: 40px;
+}
+
+/* タイトル */
+h1 {
+    color: #1e3a8a; /* 落ち着いた濃いネイビーブルー */
+    border-bottom: 2px solid #bcd1ea;
+    padding-bottom: 10px;
+}
+
+/* フォーム全体 */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #d0e0f0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ラベルと入力 */
+label {
+    font-weight: bold;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #c4d7e5;
+    border-radius: 4px;
+    background-color: #f7fbff;
+}
+
+/* ボタン */
+button {
+    background-color: #2563eb; /* 明るめの青 */
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #1d4ed8; /* ホバーで濃い青に */
+}
+
+/* ソートリンク */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* タスク表示部分 */
+.text {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #d0e0f0;
+    border-radius: 8px;
+    margin-top: 20px;
+    max-width: 600px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.text h2 {
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
 .toggle-button {
     display: inline-block;
     padding: 5px 10px;
